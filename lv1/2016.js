@@ -1,6 +1,3 @@
-let a = 5 // 월
-let b = 24 // 일
-
 // 내가 제출한 코드
 function solution(a, b) {
     let whatday = `2016-${String(a).padStart(2, '0')}-${String(b).padStart(2, '0')}`; // padStart() 값을 2 자리로 변환, 빈자리는 '0'으로 채운다 -> 두자릿수로 바꿈. String(a)는 빈자리를 채우는 0이 문자열이여서 a를 먼저 문자형으로 변환
@@ -10,8 +7,7 @@ function solution(a, b) {
 }
 
 
-console.log(solution(a,b));
-
+// 다른사람의 코드
 
 function getDayName(a,b){
     var date = new Date(2016, (a - 1), b);
