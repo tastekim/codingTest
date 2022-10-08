@@ -11,13 +11,13 @@
 // 원래의 비밀지도를 해독하여 '#', 공백으로 구성된 문자열 배열로 출력하라.
 
 function solution(n, arr1, arr2) {
-    let arr_1 = arr1.map(x => x.toString(2).padStart(n, "0"));
+    let arr_1 = arr1.map(x => x.toString(2).padStart(n, "0")); // 2진법으로 변환 후 길이를 n만큼 0을 앞에서부터 채우기.
     let arr_2 = arr2.map(x => x.toString(2).padStart(n, "0"));
     let answer = []
     for (let i = 0; i < n; i++) {
         let str = '';
         for (let j = 0; j < n; j++) {
-            if (arr_1[i][j] == '1' || arr_2[i][j] == '1') {
+            if (arr_1[i][j] == '1' || arr_2[i][j] == '1') { // 두 배열의 요소중 1을 포함하는 애가 있으면 #으로 채우기.
                 str += '#';
             } else {
                 str += ' ';
@@ -32,7 +32,7 @@ function solution(n, arr1, arr2) {
 
 // 다른사람의 코드
 function solution(n, arr1, arr2) {
-    return arr1.map((v, i) => addZero(n, (v | arr2[i]).toString(2)).replace(/1|0/g, a => +a ? '#' : ' '));
+    return arr1.map((v, i) => addZero(n, (v | arr2[i]).toString(2)).replace(/1|0/g, a => +a ? '#' : ' ')); // replace 안에 저렇게 조건문으로도 쓸수가 있구나,,
 }
 
 const addZero = (n, s) => {
